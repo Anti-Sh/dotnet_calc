@@ -1,0 +1,8 @@
+W:\Program Storage\c#\dotnet_calc\Calc\bin\Debug\Calc.exe.config
+W:\Program Storage\c#\dotnet_calc\Calc\bin\Debug\Calc.exe
+W:\Program Storage\c#\dotnet_calc\Calc\bin\Debug\Calc.pdb
+W:\Program Storage\c#\dotnet_calc\Calc\obj\Debug\Calc.csproj.AssemblyReference.cache
+W:\Program Storage\c#\dotnet_calc\Calc\obj\Debug\Calc.csproj.SuggestedBindingRedirects.cache
+W:\Program Storage\c#\dotnet_calc\Calc\obj\Debug\Calc.csproj.CoreCompileInputs.cache
+W:\Program Storage\c#\dotnet_calc\Calc\obj\Debug\Calc.exe
+W:\Program Storage\c#\dotnet_calc\Calc\obj\Debug\Calc.pdb
