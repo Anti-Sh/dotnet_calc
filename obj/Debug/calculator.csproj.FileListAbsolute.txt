@@ -1,0 +1,8 @@
+F:\repos\.net\calculator\bin\Debug\calculator.exe.config
+F:\repos\.net\calculator\bin\Debug\calculator.exe
+F:\repos\.net\calculator\bin\Debug\calculator.pdb
+F:\repos\.net\calculator\obj\Debug\calculator.csproj.AssemblyReference.cache
+F:\repos\.net\calculator\obj\Debug\calculator.csproj.SuggestedBindingRedirects.cache
+F:\repos\.net\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+F:\repos\.net\calculator\obj\Debug\calculator.exe
+F:\repos\.net\calculator\obj\Debug\calculator.pdb

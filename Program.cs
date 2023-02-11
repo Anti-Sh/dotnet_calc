@@ -28,7 +28,13 @@ namespace Calc
             Console.WriteLine("\n\nВведите выражение для расчета (Например, A+B или A + B) ");
             string inputRow = Console.ReadLine().Replace('.', ','); // Считывание примера из консоли и исправление неправильного ввода числа с плавающей точкой
 
-            decimal[] numbers = inputRow.Split(mathOperations).Select(x => decimal.Parse(x.Trim())).ToArray(); // Извлечение чисел из строки и преобразование их в Decimal
+            var splitedInput = inputRow.Split(mathOperations);
+            if ( splitedInput.Length <= 1) 
+            {
+                throw new Exception("Введено только одно число!");
+            }
+
+            var numbers = inputRow.Split(mathOperations).Select(x => ValidateDecimal(x.Trim())).ToList(); // Извлечение чисел из строки и преобразование их в Decimal
             decimal result = numbers[0]; // Итеративный процесс начинается с результата, равному первому операнду
 
             var operations = regMathOperations.Matches(inputRow); // Извлечение операторов из введенной пользователем строки
@@ -40,6 +46,15 @@ namespace Calc
             }
 
             Console.WriteLine($"\nРезультат вычисления:\t{result}");
+        }
+
+        static decimal ValidateDecimal(string input)
+        {
+            if(!decimal.TryParse(input, out decimal result))
+            {
+                throw new Exception("Не удалось распознать число!");
+            }
+            return result;
         }
 
         static decimal doCalc(decimal a, decimal b, char op) // Выполнение действия
