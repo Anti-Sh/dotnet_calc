@@ -37,15 +37,36 @@ namespace Calc
             var numbers = inputRow.Split(mathOperations).Select(x => ValidateDecimal(x.Trim())).ToList(); // Извлечение чисел из строки и преобразование их в Decimal
             decimal result = numbers[0]; // Итеративный процесс начинается с результата, равному первому операнду
 
-            var operations = regMathOperations.Matches(inputRow); // Извлечение операторов из введенной пользователем строки
-            for (int i = 0; i < operations.Count; i++)
+            var operations = regMathOperations.Matches(inputRow).Cast<Match>().Select(match => Convert.ToChar(match.Value)).ToList(); // Извлечение операторов из введенной пользователем строки
+
+            int counter = 0;
+            do
+            {
+                counter += 1;
+                int indexOfMultiplicate = operations.IndexOf('*') == -1 ? 10000 : operations.IndexOf('*');
+                int indexOfDivide = operations.IndexOf('/') == -1 ? 10000 : operations.IndexOf('/');
+                int operationIndex = 0;
+                if (indexOfMultiplicate < indexOfDivide && indexOfMultiplicate != -1)
+                    operationIndex = indexOfMultiplicate;
+                else if (indexOfDivide < indexOfMultiplicate && indexOfDivide != -1)
+                    operationIndex = indexOfDivide;
+
+                var temp = doCalc(numbers[operationIndex], numbers[operationIndex + 1], operations[operationIndex]);
+                Console.WriteLine($"\nШаг {counter}: \t{numbers[operationIndex]} {operations[operationIndex]} {numbers[operationIndex + 1]} = {temp}"); // Вывод результата выполнения итерации
+                numbers[operationIndex] = temp;
+                operations.RemoveAt(operationIndex);
+                numbers.RemoveAt(operationIndex + 1);
+
+            } while(operations.Count > 0);
+            
+            /*for (int i = 0; i < operations.Count; i++)
             {
                 decimal tmp = result; // Хранение первого операнда итерации
-                result = doCalc(result, numbers[i + 1], Convert.ToChar(operations[i].Value)); // Выполнение действия
-                Console.WriteLine($"\nШаг {i + 1}: \t{tmp} {operations[i].Value} {numbers[i+1]} = {result}"); // Вывод результата выполнения итерации
-            }
+                result = doCalc(result, numbers[i + 1], Convert.ToChar(operations[i])); // Выполнение действия
+                Console.WriteLine($"\nШаг {i + 1}: \t{tmp} {operations[i]} {numbers[i+1]} = {result}"); // Вывод результата выполнения итерации
+            }*/
 
-            Console.WriteLine($"\nРезультат вычисления:\t{result}");
+            Console.WriteLine($"\nРезультат вычисления:\t{numbers[0]}");
         }
 
         static decimal ValidateDecimal(string input)

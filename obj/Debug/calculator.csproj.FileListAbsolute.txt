@@ -6,3 +6,11 @@ F:\repos\.net\calculator\obj\Debug\calculator.csproj.SuggestedBindingRedirects.c
 F:\repos\.net\calculator\obj\Debug\calculator.csproj.CoreCompileInputs.cache
 F:\repos\.net\calculator\obj\Debug\calculator.exe
 F:\repos\.net\calculator\obj\Debug\calculator.pdb
+W:\Program Storage\c#\dotnet_calc\bin\Debug\calculator.exe.config
+W:\Program Storage\c#\dotnet_calc\bin\Debug\calculator.exe
+W:\Program Storage\c#\dotnet_calc\bin\Debug\calculator.pdb
+W:\Program Storage\c#\dotnet_calc\obj\Debug\calculator.csproj.AssemblyReference.cache
+W:\Program Storage\c#\dotnet_calc\obj\Debug\calculator.csproj.SuggestedBindingRedirects.cache
+W:\Program Storage\c#\dotnet_calc\obj\Debug\calculator.csproj.CoreCompileInputs.cache
+W:\Program Storage\c#\dotnet_calc\obj\Debug\calculator.exe
+W:\Program Storage\c#\dotnet_calc\obj\Debug\calculator.pdb
